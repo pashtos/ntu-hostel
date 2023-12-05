@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_light"
+    tools:context=".presentation.views.StudentDetailsFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Room info"
+        android:textSize="42sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNameHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Name:"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewStudentsLimitHolder"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewStudentsLimitHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Spots limit: "
+        android:textSize="32sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFloorHolder" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewFloorHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Floor:"
+        android:layout_marginTop="24dp"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewStudentsLimitHolder"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameHolder" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewStudentsAvailableHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Spots available:"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewStudentsLimitHolder"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStudentsLimitHolder" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewResidentsHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Students:"
+        android:layout_marginTop="24dp"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewStudentsLimitHolder"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStudentsAvailableHolder" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewNameHolder"
+        app:layout_constraintStart_toEndOf="@+id/textViewStudentsAvailableHolder"
+        app:layout_constraintTop_toTopOf="@+id/textViewNameHolder"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="481" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewStudentsLimit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewStudentsLimitHolder"
+        app:layout_constraintStart_toStartOf="@+id/textViewName"
+        app:layout_constraintTop_toTopOf="@+id/textViewStudentsLimitHolder"
+        tools:text="5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewFloor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/button_shape"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewFloorHolder"
+        app:layout_constraintStart_toStartOf="@+id/textViewName"
+        app:layout_constraintTop_toTopOf="@+id/textViewFloorHolder"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="8" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewStudentsAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewStudentsAvailableHolder"
+        app:layout_constraintStart_toStartOf="@+id/textViewName"
+        app:layout_constraintTop_toTopOf="@+id/textViewStudentsAvailableHolder"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewResidentsList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDeleteRoom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResidentsHolder"
+        tools:itemCount="4"
+        tools:listitem="@layout/student_item" />
+
+    <ImageView
+        android:id="@+id/buttonDeleteRoom"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/circle_background"
+        android:padding="10dp"
+        android:src="@drawable/button_trash_busket"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

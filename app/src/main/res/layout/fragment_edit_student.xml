@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_light">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editor"
+        android:textSize="46sp"
+        app:layout_constraintBottom_toTopOf="@+id/dropDownListRooms"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextStudentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:background="@color/white"
+        android:hint="Name"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="12dp"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextGroup"
+        app:layout_constraintTop_toBottomOf="@+id/dropDownListRooms"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <EditText
+        android:id="@+id/editTextGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:background="@color/white"
+        android:hint="Group"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="10dp"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
+        app:layout_constraintTop_toBottomOf="@+id/editTextStudentName"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropDownListRooms"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/editTextStudentName"
+        app:layout_constraintEnd_toEndOf="@+id/editTextGroup"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/editTextGroup"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4">
+
+        <AutoCompleteTextView
+            android:id="@+id/autocomplete_text_room"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:hint="Room"
+            android:inputType="none"
+            android:textSize="32sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:paddingVertical="12dp"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/dropDownListRooms"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/dropDownListRooms"
+        app:layout_constraintTop_toBottomOf="@+id/editTextGroup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

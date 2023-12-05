@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NTU Hostel</string>
+    <string name="prompt_spinner">Room</string>
+</resources>
